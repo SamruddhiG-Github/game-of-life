@@ -1,0 +1,12 @@
+pipeline {
+agent {
+node {
+labal 'built-in'
+customworkspace '/home/ec2-user'
+}
+}
+stages {
+stage ('checkout'){
+steps {
+sh '''
+git clone 
