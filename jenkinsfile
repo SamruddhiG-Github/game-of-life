@@ -1,5 +1,5 @@
 pipeline {
-  agent {
+  agent any {
   node {
         label 'built-in'
         customWorkspace '/home/ec2-user'
