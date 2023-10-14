@@ -1,9 +1,13 @@
 pipeline {
   agent {
-    node {
+node {
         label 'built-in'
         customWorkspace '/home/ec2-user'
           }
+  tools {
+    maven 'Maven-3.8.8'
+    jdk 'jdk8'
+  }
         }
     stages {
       stage ('checkout'){
@@ -24,7 +28,7 @@ pipeline {
           }
       stage ('deploy'){
         steps {
-            sh ' cp game-of-life/gameoflife-web/target/gameoflife.war  /mnt/apache-tomcat-9.0.80/webapps ' 
+            sh ' cp game-of-life/gameoflife-web/target/gameoflife.war /mnt/apache-tomcat-9.0.80/webapps ' 
               }
           }
     }
