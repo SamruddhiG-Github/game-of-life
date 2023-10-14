@@ -1,9 +1,5 @@
 pipeline {
   agent any {
-  node {
-        label 'built-in'
-        customWorkspace '/home/ec2-user'
-          }
   tools {
     maven 'Maven-3.8.8'
     jdk 'jdk8'
