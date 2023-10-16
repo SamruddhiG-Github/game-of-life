@@ -1,16 +1,16 @@
 pipeline {
-   agent any
-   tools { 
-	maven 'maven 3.9.5'
-	jdk 'jdk11'
-	}
-   
+   agent {
+    node {
+        label 'built-in'
+        customWorkspace '/home/ec2-user'
+    }
+}
 
     stages {
         stage('checkout') {
             steps {
 		sh '''
-            git clone https://github.com/SamruddhiG-Github/game-of-life.git
+            git clone https://github.com/Dee601/game-of-life.git
 	   cd game-of-life
 		'''		
             }
