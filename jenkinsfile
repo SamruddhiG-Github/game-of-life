@@ -5,7 +5,9 @@ pipeline {
         customWorkspace '/home/ec2-user'
     }
 }
-
+tools {
+    jdk 'Java1.8'
+  }
     stages {
         stage('checkout') {
             steps {
